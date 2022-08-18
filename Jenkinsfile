@@ -10,9 +10,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'docker pull maven:latest'
-                sh 'do'
-                sh 'mvn -B clean package'
+                sh 'mvn -B -DskipTests clean package'
             }
         }
 
