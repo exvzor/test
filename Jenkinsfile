@@ -1,15 +1,15 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'maven:3-alpine'
+            args '-v /root/.m2:/root/.m2'
+            reuseNode true
+        }
+    }
     stages {
 
         stage('Build') {
-            agent {
-                docker {
-                    image 'maven:3-alpine'
-                    args '-v /root/.m2:/root/.m2'
-                    reuseNode true
-                }
-            }
+
             steps {
                 sh 'mvn -B clean package'
             }
