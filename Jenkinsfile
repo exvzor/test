@@ -47,7 +47,7 @@ pipeline {
         always {
 //            sh 'docker-compose down --remove-orphans -v'
 //            sh 'docker-compose ps'
-            junit 'target/surefire-reports/*.xml'
+//            junit 'target/surefire-reports/*.xml'
         }
     }
 }
