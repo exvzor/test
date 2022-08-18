@@ -1,7 +1,6 @@
 pipeline {
     agent any
     stages {
-
         stage('Build') {
             agent {
                 docker {
@@ -11,6 +10,8 @@ pipeline {
                 }
             }
             steps {
+                sh 'docker pull maven:latest'
+                sh 'do'
                 sh 'mvn -B clean package'
             }
         }
