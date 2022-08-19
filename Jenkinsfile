@@ -33,15 +33,16 @@ pipeline {
         stage('Start container') {
             steps {
                 sh 'echo Prune Docker data'
+                sh 'docker system prune -a --volumes -f'
 
                 sh 'ls -la'
                 sh 'pwd'
 
                 sh 'Start container'
-                sh 'docker compose up -d --no-color --wait'
+                sh 'docker-compose up -d --no-color --wait'
 
 
-                sh 'docker compose ps'
+                sh 'docker-compose ps'
 
             }
         }
