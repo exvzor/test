@@ -38,9 +38,9 @@ pipeline {
                 sh 'ls -la'
                 sh 'pwd'
 
-                sh 'Start container'
-//                sh 'docker compose up -d --no-color --wait'
-                sh 'docker compose version'
+                sh 'echo Start container'
+                sh 'docker compose up -d --no-color --wait'
+
 
 
                 sh 'docker compose ps'
