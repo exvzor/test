@@ -34,11 +34,13 @@ pipeline {
             steps {
                 sh 'echo Prune Docker data'
                 sh 'docker system prune -a --volumes -f'
+
                 sh 'Start container'
-                sh 'docker-compose up -d'
+                sh 'docker compose up -d --no-color --wait'
+
                 sh 'ls -la'
                 sh 'pwd'
-                sh 'docker-compose ps'
+                sh 'docker compose ps'
 
             }
         }
