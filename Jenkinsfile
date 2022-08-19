@@ -39,10 +39,10 @@ pipeline {
                 sh 'pwd'
 
                 sh 'Start container'
-                sh 'docker-compose up -d --no-color --wait'
+                sh 'docker compose up -d --no-color --wait'
 
 
-                sh 'docker-compose ps'
+                sh 'docker compose ps'
 
             }
         }
