@@ -36,12 +36,9 @@ pipeline {
                 sh 'docker system prune -a --volumes -f'
 
                 sh 'ls -la'
-                sh 'pwd'
 
                 sh 'echo Start container'
                 sh 'docker compose up -d --no-color --wait'
-
-
 
                 sh 'docker compose ps'
 
@@ -51,6 +48,7 @@ pipeline {
     }
     post {
         always {
+            sh 'docker-compose down --remove-orphans -v'
             junit 'target/surefire-reports/*.xml'
         }
     }
