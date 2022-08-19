@@ -11,6 +11,8 @@ pipeline {
             }
             steps {
                 sh 'mvn -B -DskipTests clean package'
+                sh 'ls -la'
+                sh 'pwd'
             }
         }
 
