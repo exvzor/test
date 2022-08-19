@@ -42,17 +42,9 @@ pipeline {
             }
         }
 
-        stage('Run test against the container') {
-            steps {
-                sh 'docker-compose up -d --no-color --wait'
-                sh 'docker-compose ps'
-            }
-        }
     }
     post {
         always {
-            sh 'docker-compose down --remove-orphans -v'
-            sh 'docker-compose ps'
             junit 'target/surefire-reports/*.xml'
         }
     }
