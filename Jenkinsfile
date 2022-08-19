@@ -39,7 +39,7 @@ pipeline {
 
         stage('Start container') {
             steps {
-                sh 'docker-compose up -d --no-color --wait'
+                sh 'docker-compose up --wait'
                 sh 'ls -la'
                 sh 'pwd'
                 sh 'docker-compose ps'
